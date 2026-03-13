@@ -90,4 +90,6 @@ The recursive structure of merge sort is what gives it its predictable performan
 
 At each of those levels, the merge work across all subarrays totals `O(n)` because every element is copied into a merged result exactly once at that stage. Combining `O(n)` work per level with `O(log n)` levels gives a total runtime of `O(n log n)` in the best, average, and worst cases.
 
+In the JavaScript code, `slice()` is used to split the input into the left and right halves, and `concat()` is used after the merge loop to attach whichever side still has values left. Those functions help make the code readable, but they also show why this version uses extra memory instead of sorting fully in place.
+
 This implementation creates sliced halves and merged output arrays rather than sorting fully in place, so it uses `O(n)` extra space. That additional memory is the main tradeoff for merge sort's stable and consistently strong runtime.
